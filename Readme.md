@@ -960,7 +960,7 @@ const config = {
 };
 ```
 
-You can pass the `errMessages` as follows. Note that you can define error messages specific to a property such as `emailAdr.format` and generic messages prefixed with `$` such as `$email`.
+You can pass the `errMessages` as follows. Note that you can define error messages specific to a property such as `emailAdr.format` and generic messages prefixed with `$` such as `$email` and `$required`.
 Note: This convention might well change in future releases.
 
 ```js
@@ -970,9 +970,10 @@ let config = {
       // note: would also work with email as the key
       format: "emailAdr must be a valid email"
     },
-    // generic fallback message for any email format validation
+    // generic fallback message for any email format validation and required fields
     // note: if not present uses yup default validation message
-    $email: "Email format incorrect"
+    $email: "Email format incorrect",
+    $required: "Required field"
   }
 };
 ```
